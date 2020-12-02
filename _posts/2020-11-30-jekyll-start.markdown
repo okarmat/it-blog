@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Jekyll - przydatne strony"
+title:  "Jekyll - Start"
 date:   2020-11-30 22:15:00 +0100
 categories: jekyll start
 ---
+Poniżej zamieszczam kilka stron które ułatwiają wystartowanie z pisaniem bloga przy pomocy Jekyll.
+
 [Instalacja i tworzenie nowego projektu][jekyll-quick-start]
 
 [Lista wspieranych języków dla taga highlights][ruby-rouge]
