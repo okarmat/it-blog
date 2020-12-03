@@ -6,9 +6,12 @@ categories: jekyll start
 ---
 Poniżej zamieszczam kilka stron które ułatwiają wystartowanie z pisaniem bloga przy pomocy Jekyll.
 
+[Formatowanie dat][jekyll-date-formats]
+
 [Instalacja i tworzenie nowego projektu][jekyll-quick-start]
 
-[Lista wspieranych języków dla taga highlights][ruby-rouge]
+[Lista wspieranych języków dla taga highlights][jekyll-highlights]
 
-[ruby-rouge]: https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
+[jekyll-highlights]: https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
 [jekyll-quick-start]: https://jekyllrb.com/docs/
+[jekyll-date-formats]: https://www.webisland.agency/blog/how-to-format-dates-in-jekyll/
