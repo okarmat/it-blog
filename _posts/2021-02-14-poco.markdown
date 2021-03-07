@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "WPF - POCO"
+date:   2021-02-14 13:20:00 +0100
+categories: wpf mvvm poco
+---
+# Definicja
+
+Plain Old CLR Objects (POCO) to klasy które mogą zawierać pola proste (int, string itd.), pola złożone (obiekty posiadające różne pola) i kolekcje (zawierają wiele wartości tego samego typu).
+
+{% highlight cs %}
+
+public class Friend
+{
+  public int Id { get; set; }
+  public string FirstName { get; set; }
+  public Address Address { get; set; }
+  public IList<FriendEmail> Emails { get; set; }
+}
+
+{% endhighlight %}
+
+W odróżnieniu od DTO, POCO może mieć zachowanie, czyli może posiadać metodę np. `ValidateFirstName`.
+
+POCO to klasa która nie jest zależna od jakiegokolwiek frameworka, konwencji itd. Innymi słowy świat wokół POCO może się zmieniać a on dalej robi swoje bez potrzeby wprowadzania zmian. Nie można go popsuć aktualizując framework czy przenosząc go do nowego systemu. 
+
+# Dlaczego warto stosować POCO?
+a) Stosując POCO masz tzw. luźne powiązania (loose coupling) - brak zależności do frameworka np. ORM (Object Relational Mappers)
+
+b) Scenariusz "Code First" - tworzenie modelu bez potrzeby myślenia o warstwie przechowywania danych
+
+c) "Lekki model" - bez boilerplate code
+
+# Wyzwania w zastosowaniu POCO w aplikacji klienckiej WPF.
+a) brak powiadomień o zmianach w modelu - brak implementacji INotifyPropertyChanged, INotifyCollectionChanged - zmiana danych modelu nie będzie aktualizować UI
+b) brak śledzenia zmian modelu (przydante przy np. wykrywaniu zmian w formatce i zapytaniu użytkownika przy zamykaniu okna, czy chce zapisać zmiany),
+c) brak walidacji po stronie UI - brak implementacji IDataErrorInfo, INotifyDataErrorInfo

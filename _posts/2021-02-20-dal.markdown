@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Architektura aplikacji - Data Access Layer"
+date:   2021-02-20 14:30:00 +0100
+categories: architektura aplikacji dal
+---
+
+# Data Access Layer (DAL) vs Data Access Object (DAO)
+Data Access Layer to warstwa systemu która istnieje pomiędzy warstwa biznesu (BL) a wartwą przechowywania danych (the persistence / storage layer). DAL może być pojedynczą klasą lub kompozycją wielu Data Access Objects (DAOs). Może posiadać facade z wierzchu dla warstwy biznesowej, aby móc rozmawiać z ukrytą złożonością logiki dostępu do danych. To może być ORM taki ja np. Hibernate czy Entity Framework.
+DAL to termin architektoniczny a DAOs 
+
+https://stackoverflow.com/questions/1086521/what-is-the-difference-between-dao-and-dal
+https://en.wikipedia.org/wiki/Persistence_(computer_science)#Persistence_techniques
