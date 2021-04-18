@@ -12,50 +12,49 @@ Chcąc przenieść się do określonego widoku przekazujemy odpowiedni string (U
 Rejestrowania dokonujemy w klasie modułu lub w klasie dziedziczącej po `PrismApplication`.
 Możemy rejestrować w następujący sposób:
  
-# Rejestrowanie za pomocą nazwy widoku jako unikalny klucz który będzie używany do nawigowania,
+*  Rejestrowanie za pomocą nazwy widoku jako unikalny klucz który będzie używany do nawigowania.
 {% highlight cs %}
 ContainerRegistry.RegisterForNavigation<ViewA>();
 {% endhighlight %}
 
-b) rejestrowanie za pomocą określonej nazwy,
+* Rejestrowanie za pomocą określonej nazwy.
 {% highlight cs %}
 ContainerRegistry.RegisterForNavigation<ViewA>("CustomName"); 
 {% endhighlight %}
 
-c) rejestrowanie za pomocą nazwy widoku jako unikalny string który będzie używany do nawigowania - jeśli mamy specjalną konwencję nazw odbiegającą od domyślnej,
+* Rejestrowanie za pomocą nazwy widoku jako unikalny klucz który będzie używany do nawigowania - jeśli mamy oryginalną konwencję nazw odbiegającą od domyślnej.
 {% highlight cs %}
 ContainerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
 {% endhighlight %}
 
-d) rejestrowanie za pomocą określonej nazwy - jeśli mamy specjalną konwencję nazw odbiegającą od domyślnej.
+* Rejestrowanie za pomocą określonej nazwy - jeśli mamy specjalną konwencję nazw odbiegającą od domyślnej.
 {% highlight cs %}
 ContainerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>("CustomName"); 
 {% endhighlight %}
 
 # Wykonywanie nawigacji za pomocą Region Navigation
 
-a) nawigowanie poprzez podanie nazwy widoku i regionu do `RequestNavigate`,
+* Nawigowanie poprzez podanie nazwy widoku i regionu do `RequestNavigate`.
 {% highlight cs %}
 IRegionManager regionManager = ...;
 
 regionManager.RequestNavigate("RegionName", "ViewA");
 {% endhighlight %}
 
-b) nawigowanie poprzez wyszukanie regionu po nazwie i podanie nazwy widoku do `RequestNavigate`,
+* Nawigowanie poprzez wyszukanie regionu po nazwie i podanie nazwy widoku do `RequestNavigate`.
 {% highlight cs %}
 IRegion region = regionManager.Regions["RegionName"];
 region.RequestNavigate("ViewA");
 {% endhighlight %}
 
-# Przykład zastosowania `Region navigation`
+# Przykłady zastosowania `Region Navigation`
 
-a) rejestrowanie mapowania nawigacji w klasie implementującej interfejs IModule,
+* Rejestrowanie mapowania nawigacji w klasie implementującej interfejs `IModule`.
 {% highlight cs %}
 public class ModuleAModule : IModule
 {
     public void OnInitialized(IContainerProvider containerProvider)
     {
-
     }
 
     public void RegisterTypes(IContainerRegistry containerRegistry)
@@ -66,7 +65,7 @@ public class ModuleAModule : IModule
 }
 {% endhighlight %}
 
-b) przygotowanie komendy która zostanie podłączona do przycisku nawigującego w widoku,
+* Przygotowanie komendy która zostanie podłączona do przycisku nawigującego w widoku.
 {% highlight cs %}
 public class ShellWindowViewModel : BindableBase
 {
@@ -95,7 +94,7 @@ public class ShellWindowViewModel : BindableBase
 }
 {% endhighlight %}
 
-c) podpięcie komendy do przycisku
+* Podpięcie komendy do przycisku.
 {% highlight xml %}
 <Window x:Class="PrismDemo.Views.ShellWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

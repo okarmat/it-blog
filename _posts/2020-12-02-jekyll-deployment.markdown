@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jekyll - Github Pages"
+title:  "Jekyll - Udostępnianie witryny przez Github Pages"
 date:   2020-12-02 22:10:00 +0100
 categories: jekyll github pages
 ---

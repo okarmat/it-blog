@@ -6,7 +6,10 @@ categories: wpf mvvm poco
 ---
 # Definicja
 
-Plain Old CLR Objects (POCO) to klasy które mogą zawierać pola proste (int, string itd.), pola złożone (obiekty posiadające różne pola) i kolekcje (zawierają wiele wartości tego samego typu).
+Plain Old CLR Objects (POCO) to klasy które mogą zawierać:
+* pola proste (int, string itd.),
+* pola złożone (obiekty posiadające różne pola),
+* kolekcje (zawierają wiele wartości tego samego typu).
 
 {% highlight cs %}
 
@@ -25,13 +28,13 @@ W odróżnieniu od DTO, POCO może mieć zachowanie, czyli może posiadać metod
 POCO to klasa która nie jest zależna od jakiegokolwiek frameworka, konwencji itd. Innymi słowy świat wokół POCO może się zmieniać a on dalej robi swoje bez potrzeby wprowadzania zmian. Nie można go popsuć aktualizując framework czy przenosząc go do nowego systemu. 
 
 # Dlaczego warto stosować POCO?
-a) Stosując POCO masz tzw. luźne powiązania (loose coupling) - brak zależności do frameworka np. ORM (Object Relational Mappers)
+* Stosując POCO mamy tzw. luźne powiązania (loose coupling) - brak zależności od frameworka np. ORM (Object Relational Mappers)
 
-b) Scenariusz "Code First" - tworzenie modelu bez potrzeby myślenia o warstwie przechowywania danych
+* Scenariusz "Code First" - tworzenie modelu bez potrzeby myślenia o warstwie przechowywania danych
 
-c) "Lekki model" - bez boilerplate code
+* "Lekki model" - bez boilerplate code
 
 # Wyzwania w zastosowaniu POCO w aplikacji klienckiej WPF.
-a) brak powiadomień o zmianach w modelu - brak implementacji INotifyPropertyChanged, INotifyCollectionChanged - zmiana danych modelu nie będzie aktualizować UI
-b) brak śledzenia zmian modelu (przydante przy np. wykrywaniu zmian w formatce i zapytaniu użytkownika przy zamykaniu okna, czy chce zapisać zmiany),
-c) brak walidacji po stronie UI - brak implementacji IDataErrorInfo, INotifyDataErrorInfo
+* brak powiadomień o zmianach w modelu - brak implementacji INotifyPropertyChanged, INotifyCollectionChanged - zmiana danych modelu nie będzie aktualizować UI
+* brak śledzenia zmian modelu (przydante przy np. wykrywaniu zmian w formatce i zapytaniu użytkownika przy zamykaniu okna, czy chce zapisać zmiany),
+* brak walidacji po stronie UI - brak implementacji IDataErrorInfo, INotifyDataErrorInfo
