@@ -5,9 +5,25 @@ date:   2021-02-20 14:30:00 +0100
 categories: architektura aplikacji dal
 ---
 
-# Data Access Layer (DAL) vs Data Access Object (DAO)
-Data Access Layer to warstwa systemu która istnieje pomiędzy warstwa biznesu (BL) a wartwą przechowywania danych (the persistence / storage layer). DAL może być pojedynczą klasą lub kompozycją wielu Data Access Objects (DAOs). Może posiadać facade z wierzchu dla warstwy biznesowej, aby móc rozmawiać z ukrytą złożonością logiki dostępu do danych. To może być ORM taki ja np. Hibernate czy Entity Framework.
-DAL to termin architektoniczny a DAOs 
+# Data Access Layer
+Aplikacje zorientowane obiektowo, które uzyskują dostęp do bazy danych, muszą mieć logikę do obsługi dostępu do bazy danych. Aby kod był czysty i modułowy, zaleca się, aby logika dostępu do bazy danych była izolowana w oddzielnym module. W architekturze warstwowej ten moduł to DAL.
 
-https://stackoverflow.com/questions/1086521/what-is-the-difference-between-dao-and-dal
-https://en.wikipedia.org/wiki/Persistence_(computer_science)#Persistence_techniques
+# Data Access Object
+DAO to obiekt dostępu do danych. Jest to klasa, która pozwala na pobieranie, dodawanie, usuwanie i modyfikowanie danych. Obiekt ten nie jest ograniczony do przechowywania konkretnego typu danych. Z jego wykorzystaniem można operować na wielu typach danych. Daje to wysoką elastyczność.
+
+# Repository
+Repository pozwala na zarządzanie dostępem do danych i wykonywanie różnorodnych operacji na konkretnym typie danych. Z repozytorium jest ściśle powiązany model danych. Przy jego wykorzystywaniu zagadnienia powiązane z konkretną bazą danych.
+
+Repozytorium przechowuje wszystkie dane w tej samej tabeli. Dlatego z konkretnym repozytorium powiązany jest dany model, który przekłada się na jedną tabelę. Przykładowo model User posiada repozytorium UserRepository i odzwierciedlany jest w postaci jednej tabeli user.
+
+Głównym punktem wzorca repozytorium jest to, że z perspektywy użytkowania powinien zachowywać się jak kolekcja – obsługiwać takie operacje, jak dodawanie, usuwanie, zawieranie, modyfikowanie itp.
+
+[DAO i wzorzec repository][dao-vs-repository]
+
+[Różnice pomiędzy DAO i DAL][dao-vs-dal]
+
+[Warstwa trwałości (persistence)][persistence]
+
+[dao-vs-dal]: https://stackoverflow.com/questions/1086521/what-is-the-difference-between-dao-and-dal
+[persistence]: https://en.wikipedia.org/wiki/Persistence_(computer_science)#Persistence_techniques
+[dao-vs-repository]: https://bykowski.pl/dao-czy-repository-jaka-warstwe-dostepu-do-danych-wykorzystywac/
