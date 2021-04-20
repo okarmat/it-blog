@@ -5,10 +5,10 @@ date:   2021-03-18 21:15:00 +0100
 category: wpf prism widoki view views
 ---
 
-Co to jest widok?
+# Co to jest widok?
 Widok to część, porcja interfejsu użytkownika.
 Okno może się składać z jednego lub wielu widoków które są wstrzykiwane w regiony. Np. MenuView, NavigationView, ContentView.
-W VisualStudio widok to `UserControl`. 90% wstrzykiwanych widoków do regionów to `UserControl`.
+W VisualStudio widok to `UserControl`. 90% wstrzykiwanych widoków do regionów to UserControl.
 Pojedynczy widok może posiadać inne widoki zdefiniowane wewnątrz niego. Może też posiadać regiony które będą mieć zagnieżdżone inne widoki.
 Można mieć wiele instancji tego samego widoku.
 
@@ -27,14 +27,14 @@ Można mieć wiele instancji tego samego widoku.
 </UserControl>
 {% endhighlight %}
 
-View Composition
-`View Composition` to proces tworzenia widoku a dokładnie proces tworzenia instancji widoku i wyświetlenie go / wstrzyknięcie go do regionów.
+# View Composition
+View Composition to proces tworzenia widoku a dokładnie proces tworzenia instancji widoku i wyświetlenie go / wstrzyknięcie go do regionów.
 Mamy do dyspozycji dwa podejścia, aby uzyskać View Composition.
-a) View Discovery - przeniesienie odpowiedzialności utworzenia / wyświetlenie widoku na region.
-b) View Injection - za utworzenie, wyświetlenie i wstrzyknięcie widoku odpowiedzialny jest developer.
+* View Discovery - przeniesienie odpowiedzialności utworzenia / wyświetlenie widoku na region.
+* View Injection - za utworzenie, wyświetlenie i wstrzyknięcie widoku odpowiedzialny jest developer.
 
-View Discovery
-W tym podejściu regiony same szukają widoków. Nie ma się wyraźnej kontroli, ale dzięki temu dzieje się cały proces automatycznie.
+# View Discovery
+W tym podejściu regiony same szukają widoków. Nie ma się wyraźnej kontroli, ale dzięki temu cały proces dzieje się automatycznie.
 
 {% highlight cs %}
 public class ModuleAModule : IModule
@@ -58,7 +58,7 @@ public class ModuleAModule : IModule
 }
 {% endhighlight %}
 
-View Injection
+# View Injection
 W tym podejściu to developer musi dodawać i usuwać widoki. Ma wyraźną kontrolę nad procesem. Sam aktywuje i dezaktywuje widoki.
 Ważne, aby region istniał przed wstrzyknięciem widoku.
 

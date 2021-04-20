@@ -5,23 +5,23 @@ date:   2021-03-18 22:10:00 +0100
 category: wpf prism view model locator
 ---
 
-Jeśli używamy podczas tworzenia plikacji wzorca MVVM musimy zdecydować w jaki sposób połączymy ze sobą instancję view model i data context widoku.
+Jeśli używamy podczas tworzenia aplikacji wzorca MVVM musimy zdecydować w jaki sposób połączymy ze sobą instancję view model i data context widoku.
 Mamy kilka sposobów które pomogą nam ten cel zrealizować.
-a) XAML - definiujemy instancję view modelu w pliku XAML i przypisujemy ją do propercji data context wewnątrz XAMLa,
-b) Code Behinde - ręcznie przypisujemy view model do data context widoku w konstruktorze widoku,
-c) Constructor Injection - wstrzykujemy view model do konstruktura widoku i później ręcznie przypisujemy go do data contextu,
-d) View Model Locator - rekomendowany przy korzystaniu z frameworka Prism.
+* XAML - definiujemy instancję view modelu w pliku XAML i przypisujemy ją do propercji data context wewnątrz XAMLa,
+* Code Behinde - ręcznie przypisujemy view model do data context widoku w konstruktorze widoku,
+* Constructor Injection - wstrzykujemy view model do konstruktura widoku i później ręcznie przypisujemy go do data contextu,
+* View Model Locator - rekomendowany przy korzystaniu z frameworka Prism.
 
 # View Model Locator
 
-Konwencja nazw
-1. Wszystkie widoki są umieszczone w przestrzeni nazw `Views`.
-2. Wszystkie widoki modeli są umieszczone w przestrzeni nazw `ViewModels`.
-3. Nazwa widoku + "ViewModel" = Nazwa widoku modelu
-4. Jeśli nazwa widoku kończy się na "View" to nie dublujemy "View" w nazwie widoku modelu. (MainView + ViewModel = MainViewModel)
+Aby mechanizm locatora zadziałał konieczne jest zachowanie odpowiedniej konwencji nazw.
+* Wszystkie widoki są umieszczone w przestrzeni nazw `Views`.
+* Wszystkie widoki modeli są umieszczone w przestrzeni nazw `ViewModels`.
+* Nazwa widoku + "ViewModel" = Nazwa widoku modelu
+* Jeśli nazwa widoku kończy się na "View" to nie dublujemy "View" w nazwie widoku modelu. (MainView + ViewModel = MainViewModel)
 
 Aby aktywować automatyczne połączenie widoku z widokiem modelu ustawiamy w widoku `AutoWireViewModel` na true.
-Oczywiście pamiętamy o konwencji nazw widoków i widoków modeli.
+Oczywiście pamiętamy o konwencji nazw widoków i modeli widoków.
 
 {% highlight xml %}
 <UserControl x:Class="ModuleA.Views.ViewA"
@@ -47,6 +47,7 @@ public class ViewAViewModel : BindableBase
 }
 {% endhighlight %}
 
+# Niestandardowa konwencja nazw
 Jeśli chcemy zmienić konwencje nazw - bo np. nasz projekt odbiega od powyższego schematu nazewnictwa - to musimy nadpisać w App.xaml.cs metodę ConfigureViewModelLocator logikę odnajdowania nazwy widoku w SetDefaultTypeToViewModelTypeResolver.
 
 Niekiedy nie jesteśmy w stanie skorzystać z domyślnej konwencji przyjętej przez Prism. Wówczas dobrze jest mieć narzędzie do zarejestrowanie np. konkretnego typu widoku z konkretnym typem widoku modelu. Do tego celu używamy `ViewModelLocationProvider.Register`. Możemy nawet za pośrednictwem tej metody przygotować fabrykę która będzie dostarczała instancję widoku modelu dla powiązanego widoku.
@@ -68,10 +69,10 @@ public class ModuleAModule : IModule
 
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
-	    //Using Types
+        //Using Types
         ViewModelLocationProvider.Register<ControlA, ControlAViewModel>();
 
-		// Using Factory
+        // Using Factory
         //ViewModelLocationProvider.Register<ControlA>(() => new ControlAViewModel() { Text = "Hello from Factory" });
     }
 }

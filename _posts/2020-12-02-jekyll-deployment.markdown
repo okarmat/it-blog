@@ -28,7 +28,9 @@ $ jekyll build
 $ jekyll serve
 {% endhighlight %}
 
-Więcej szczegółów odnośnie konfiguracji środowiska i tworzenia projektu Jekyll znajdziesz [tutaj][jekyll-start].
+[Szczegóły konfiguracji środowiska i tworzenia projektu Jekyll][jekyll-start].
+
+[Szczegóły testowania][jekyll-test].
 
 # Udostępnianie strony za pośrednictwem Github Pages
 Github Pages zapewnia wsparcie dla stron napisanych przy pomocy Jekyll. Jeśli chcemy opublikować naszą stronę to w repozytorium tworzymy obok głównego brancha `master` jeden dodatkowy np. `gh-pages`. Na branchu pomocniczym w pliku `Gemfile` zakomentowujemy wiersz:
@@ -43,3 +45,4 @@ a następnie kasujemy znak `#` z liniki
 Tak swoją drogą to w komentarzu wewnątrz pliku `Gemfile` jest ten tok postępowania zapisany, ale łatwo go przeoczyć.
 
 [jekyll-start]: http://www.stephaniehicks.com/githubPages_tutorial/pages/githubpages-jekyll.html
+[jekyll-test]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
