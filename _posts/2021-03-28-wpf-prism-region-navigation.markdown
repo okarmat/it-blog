@@ -6,7 +6,7 @@ category: wpf prism region navigation
 ---
 # Teoria
 Podobnie jak w przypadku `View Composition` mechanizm `Region Navigation` dodaje widok do określonego regionu. Dokładnie mówiąc podczas nawigowania przechodzimy od jednego widoku do drugiego (i wyświetlamy je w regionie).
-Chcąc przenieść się do określonego widoku przekazujemy odpowiedni string (URI) - klucz unikalny. To różni od `View Composition` który jest przydatny kiedy nie używamy modelu widoku . Ale gdy jesteś w modelu widoku nie możesz użyć `View Discovering` lub `View Injection` bo to wymagałoby referencji do typu widoku lub instancji widoku. Dlatego przydatny jest w takiej sytuacji `Region Navigation` który używa stringa do nawigowania do widoku. To eliminuje powiązania od widoku do modelu widoku.
+Chcąc przenieść się do określonego widoku przekazujemy odpowiedni string (URI) - klucz unikalny. To różni od `View Composition` który jest przydatny kiedy nie używamy modelu widoku, ale gdy jesteś w modelu widoku nie możesz użyć `View Discovering` lub `View Injection` bo to wymagałoby referencji do typu widoku lub instancji widoku. Dlatego przydatny jest w takiej sytuacji `Region Navigation` który używa stringa do nawigowania do widoku. To eliminuje powiązania od widoku do modelu widoku.
  
 # Rejestrowanie widoku do nawigacji
 Rejestrowania dokonujemy w klasie modułu lub w klasie dziedziczącej po `PrismApplication`.
@@ -47,7 +47,7 @@ IRegion region = regionManager.Regions["RegionName"];
 region.RequestNavigate("ViewA");
 {% endhighlight %}
 
-# Przykłady zastosowania `Region Navigation`
+# Przykłady zastosowania Region Navigation
 
 * Rejestrowanie mapowania nawigacji w klasie implementującej interfejs `IModule`.
 {% highlight cs %}

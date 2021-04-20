@@ -4,14 +4,13 @@ title:  "WPF - Dialogs"
 date:   2021-04-07 22:06:00 +0100
 category: wpf prism dialogs dialog
 ---
-# Definicja
-Czym są dialogi?
-Dialogi to formatka lub okno pojawiające się ponad aplikacją. Komunikuje się z użytkownikiem w celu:
+# Czym jest dialog?
+Dialog to formatka lub okno pojawiające się ponad aplikacją. Komunikuje się z użytkownikiem w celu:
 * informowania użytkownika o czymś,
 * zadania pytania,
 * zdobycia informacji od użytkownika.
 
-Dialogi moga być:
+Dialogi mogą być:
 * modalne, 
 * niemodalne.
 

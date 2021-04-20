@@ -15,20 +15,20 @@ Aby, utworzyć aplikację WPF korzystającą z biblioteki Prism, należy utworzy
 {% endhighlight %}
 
 {% highlight cs %}
-    public partial class App : PrismApplication
+public partial class App : PrismApplication
+{
+    protected override Window CreateShell()
     {
-        protected override Window CreateShell()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            throw new System.NotImplementedException();
-        }
+        throw new System.NotImplementedException();
     }
+
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        throw new System.NotImplementedException();
+    }
+}
 {% endhighlight %}
 
-Więcej informacji można znaleźć [tutaj]:[wpf-prism].
+Więcej informacji można znaleźć [tutaj][wpf-prism].
 
 [wpf-prism]: https://app.pluralsight.com/library/courses/prism-wpf-introduction/table-of-contents
