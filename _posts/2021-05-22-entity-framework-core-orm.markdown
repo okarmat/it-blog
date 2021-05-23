@@ -12,7 +12,7 @@ Entity Framework Core pozwala na:
 - Łatwe zarządzanie relacjami 1 do 1, 1 do wielu oraz wiele do wielu.
 - Tworzenie relacji dziedziczenia pomiędzy encjami.
 
-![](/assets/images/enitity-framework-core-orm-diagram.jpg)
+![]("/assets/images/enitity-framework-core-orm-diagram.jpg" | absolute_url )
 
 Więcej informacji można znaleźć [tutaj][entity-framework-core].
 
