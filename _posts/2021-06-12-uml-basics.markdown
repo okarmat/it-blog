@@ -37,6 +37,8 @@ Stany - prostokąt z zaokrąglonymi rogami i nazwą, reprezentuje stan w którym
 
 Akcje - niestety akcje są bardzo podobne do stanów - także mają zaokrąglone rogi i nazwę. Rozróżnić je można po nazwie i/lub kontekście.
 
+![]({{ "/assets/images/uml-basics-message-arrows.jpg" | absolute_url }})
+
 # Relacje
 
 Stowarzyszenie (association) - linia ciągła pomiędzy dwoma bytami, często są to klasy, ale niekoniecznie. Dodatkowo na początku i końcu linii występują liczby który oznaczać będą wielość, czyli określają ile z jednej lub drugiej strony relacji jest dozwolone. Może się też pojawić gwiazdka która oznacza od 0 do wielu.
@@ -47,8 +49,16 @@ Realizacja, absorbcja (implementation) - linia przerywana ze strzałką której 
 
 Zależność (dependency) - linia przerywana z otwartym grotem, oznacza pewien związek w którym jeden obiekt jest zależny od drugiego. Obiekt który jest wskazywany grotem jest tym, na którym drugi jest zależny.
 
+![]({{ "/assets/images/uml-basics-relation-arrows.jpeg" | absolute_url }})
+
 # Rozszerzenia
 
 Notatki - wyglądają jak małe notki z rozłożonymi krawędziami. Służy do zapisu dodatkowych informacji na diagramie.
  
 Stereotyp - zapisywany jako np. <<Interface>> i wówczas identyfikuje on element na diagramie jako interfejs, ale istnieje wiele różnych stereotypów.
+
+
+Więcej informacji można znaleźć [tutaj][uml-basics].
+
+
+[uml-basics]: https://www.p-programowanie.pl/uml/diagramy-klas-uml
